@@ -6,15 +6,13 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 16:37:10 by tafocked          #+#    #+#              #
-#    Updated: 2024/10/24 17:14:43 by tafocked         ###   ########.fr        #
+#    Updated: 2024/10/24 16:26:17 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= zombie.exe
 
-FILES	= main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp \
+FILES	= $(wildcard *.cpp) \
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=thread
