@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:31:16 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 17:26:46 by tafocked         ###   ########.fr       */
+/*   Created: 2024/10/24 18:00:00 by tafocked          #+#    #+#             */
+/*   Updated: 2024/10/24 18:52:22 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int	main(void)
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-	int		N;
-	Zombie	*zombie;
+	public:
+		HumanB(std::string name);
+		~HumanB(void);
+		void	setType(Weapon type);
+		void	setWeapon(Weapon type);
+		void	attack(void);
 
-	N = 5;
-	zombie = zombieHorde(N, "newZombie");
-	if (zombie)
-	{
-		while (N--)
-			zombie[N].announce();
-	}
-	delete[] zombie;
-	system("leaks zombie.exe");
-	return (0);
-}
+	private:
+		std::string	name;
+		Weapon		type;
+};
+
+#endif

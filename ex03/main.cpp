@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:31:16 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 17:26:46 by tafocked         ###   ########.fr       */
+/*   Created: 2024/10/24 17:58:49 by tafocked          #+#    #+#             */
+/*   Updated: 2024/10/24 18:18:16 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int	main(void)
+int main()
 {
-	int		N;
-	Zombie	*zombie;
-
-	N = 5;
-	zombie = zombieHorde(N, "newZombie");
-	if (zombie)
 	{
-		while (N--)
-			zombie[N].announce();
+		Weapon club = Weapon("crude spiked club");
+
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	delete[] zombie;
-	system("leaks zombie.exe");
-	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }

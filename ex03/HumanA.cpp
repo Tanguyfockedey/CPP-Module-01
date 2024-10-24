@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:31:16 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 17:26:46 by tafocked         ###   ########.fr       */
+/*   Created: 2024/10/24 17:59:35 by tafocked          #+#    #+#             */
+/*   Updated: 2024/10/24 18:45:39 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int	main(void)
+HumanA::HumanA(std::string name, Weapon type): name(name), type(type)
+{}
+
+HumanA::~HumanA()
+{}
+
+void	HumanA::setType(Weapon type)
 {
-	int		N;
-	Zombie	*zombie;
+	this->type = type;
+}
 
-	N = 5;
-	zombie = zombieHorde(N, "newZombie");
-	if (zombie)
-	{
-		while (N--)
-			zombie[N].announce();
-	}
-	delete[] zombie;
-	system("leaks zombie.exe");
-	return (0);
+void	HumanA::attack(void)
+{
+	std::cout << this->name << " attacks with their " << this->type.getType() << std::endl;
 }

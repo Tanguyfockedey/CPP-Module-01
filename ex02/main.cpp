@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 15:31:16 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 17:26:46 by tafocked         ###   ########.fr       */
+/*   Created: 2024/10/24 17:28:29 by tafocked          #+#    #+#             */
+/*   Updated: 2024/10/24 17:49:59 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <string>
+#include <iostream>
 
 int	main(void)
 {
-	int		N;
-	Zombie	*zombie;
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR = &string;
+	std::string &stringREF = string;
 
-	N = 5;
-	zombie = zombieHorde(N, "newZombie");
-	if (zombie)
-	{
-		while (N--)
-			zombie[N].announce();
-	}
-	delete[] zombie;
-	system("leaks zombie.exe");
-	return (0);
+	std::cout << "string address : " << &string << std::endl;
+	std::cout << "pointer value: " << stringPTR << std::endl;
+	std::cout << "reference value: " << &stringREF << std::endl << std::endl;
+	
+	std::cout << "string: " << string << std::endl;
+	std::cout << "pointed value: " << *stringPTR << std::endl;
+	std::cout << "referenced value: " << stringREF << std::endl;
 }
