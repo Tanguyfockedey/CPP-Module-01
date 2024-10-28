@@ -6,12 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:00:14 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 18:41:04 by tafocked         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:35:41 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -20,14 +19,11 @@
 class HumanA
 {
 	public:
-		HumanA(std::string name, Weapon type);
+		HumanA(const std::string name, Weapon &type);
 		~HumanA(void);
-		void	setType(Weapon type);
-		void	attack(void);
+		void	attack(void) const;
 
 	private:
 		std::string	name;
-		Weapon		type;
+		Weapon		&type;
 };
-
-#endif

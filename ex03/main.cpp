@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:58:49 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 18:18:16 by tafocked         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:38:58 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	// system("leaks zombie.exe");
 	return 0;
 }

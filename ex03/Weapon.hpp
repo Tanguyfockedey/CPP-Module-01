@@ -6,25 +6,22 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:59:07 by tafocked          #+#    #+#             */
-/*   Updated: 2024/10/24 18:49:15 by tafocked         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:33:19 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#pragma once
 
 #include <string>
 
 class Weapon
 {
 	public:
-		Weapon(std::string type);
+		Weapon(const std::string type);
 		~Weapon(void);
-		std::string	getType(void);
-		void		setType(std::string type);
+		std::string	getType(void) const;
+		void		setType(const std::string type);
 	
 	private:
 		std::string	type;
 };
-
-#endif
