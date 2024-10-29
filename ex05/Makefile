@@ -6,13 +6,14 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 16:37:10 by tafocked          #+#    #+#              #
-#    Updated: 2024/10/29 15:03:06 by tafocked         ###   ########.fr        #
+#    Updated: 2024/10/29 17:46:55 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= program.exe
+NAME	= Harl.exe
 
-FILES	= $(wildcard *.cpp) \
+FILES	= Harl.cpp \
+			main.cpp \
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=thread
